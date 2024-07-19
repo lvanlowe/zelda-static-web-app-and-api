@@ -9,6 +9,8 @@ import { AboutComponent } from './about.component';
 import { RouterModule } from '@angular/router';
 import { externalModules } from './build-specific';
 import { declarations } from './core';
+import { EntityDataModule } from '@ngrx/data';
+import { entityConfig } from './entity-metadata';
 
 @NgModule({
   declarations: [AppComponent, AboutComponent, declarations],
@@ -17,7 +19,8 @@ import { declarations } from './core';
     HttpClientModule,
     RouterModule.forRoot(routes),
     AppStoreModule,
-    externalModules
+    externalModules,
+    EntityDataModule.forRoot(entityConfig)
   ],
   bootstrap: [AppComponent]
 })
